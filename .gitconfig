@@ -1,0 +1,15 @@
+[user]
+  name = taketaku
+  email = vbvbsp48@gmail.com
+[alias]
+  co = checkout
+  fe = fetch
+  st = status
+  ci = commit -a -v
+  b = branch -a
+[core]
+  editor = vi
+[push]
+  default = current
+[github]
+	user = taketaku
