@@ -1,7 +1,0 @@
-version: '3'
-services:
-  pc:
-    container_name: "virtual-pc"
-    build: .
-    volumes:
-      - ./:/home/workspace
