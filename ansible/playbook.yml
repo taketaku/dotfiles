@@ -1,0 +1,103 @@
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: set fact
+      set_fact:
+        date: "{{lookup('pipe','date +%Y%m%d')}}"
+        upstream: "bionic"
+    - debug: msg="date={{ date }}, upstream={{ upstream }}"
+#######################################
+# add apt repositories
+#######################################
+    - name: add apt repositories
+      apt_repository: repo={{ item }}
+      become: true
+      with_items:
+        - ppa:philip.scott/elementary-tweaks
+        - ppa:fish-shell/release-3
+#--------------------------------------
+# docker
+#--------------------------------------
+    - name: Add Docker GPG key
+      become: true
+      apt_key: url=https://download.docker.com/linux/ubuntu/gpg
+    - name: add Docker apt repository
+      apt_repository:
+        repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ upstream }} stable"
+      become: yes
+#######################################
+# apt
+#######################################
+    - name: apt install
+      become: true
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+        pkg:
+          - git
+          - curl
+          - build-essential # make, gcc(GNU Compiler Collection); library package; @see https://packages.ubuntu.com/xenial/build-essential
+          - libreadline-dev # GNU readline
+          - zlib1g-dev # compression library package; @see https://packages.ubuntu.com/xenial/zlib1g-dev
+          - fcitx-mozc
+          - xclip
+          - snapd
+          - libinput-tools
+          - xdotool
+          - elementary-tweaks
+          - software-properties-common
+          - gdebi # install deb files. It lets you install local deb packages resolving and installing its dependencies.
+          - python-apt
+          - fish
+          - apt-transport-https # for docker
+          - ca-certificates # for docker
+          - gnupg-agent # for docker
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+#######################################
+# anyenv
+#######################################
+    - name: Install anyenv
+      git: repo={{ item.repo }} dest={{ item.dest }} update=no
+      with_items:
+        - { repo: "https://github.com/anyenv/anyenv",
+            dest: "~/.anyenv"
+          }
+        - {
+            repo: "https://github.com/znz/anyenv-update.git",
+            dest: "~/.anyenv/plugins/anyenv-update",
+          }
+        - {
+            repo: "https://github.com/znz/anyenv-git.git",
+            dest: "~/.anyenv/plugins/anyenv-git",
+          }
+    - name: Update anyenv
+      shell: |
+        eval "$(anyenv init -)"
+        anyenv update
+        rm -f /tmp/anyenv-updated-*
+        touch /tmp/anyenv-updated-{{ date }}
+      args:
+        executable: /bin/bash
+        creates: /tmp/anyenv-updated-{{ date }}
+    - name: Install envs
+      shell: |
+        eval "$(anyenv init -)"
+        anyenv install {{ item.env }}
+        eval "$(anyenv init -)"
+        {{ item.env }} install {{ item.version  }}
+        {{ item.env }} rehash
+      args:
+        executable: /bin/bash
+        creates: ~/.anyenv/envs/{{ item.env }}/versions/{{ item.version }}
+      with_items:
+        - { env: "rbenv", version: "2.7.0" }
+        - { env: "goenv", version: "1.13.6" }
+#######################################
+# docker-compose
+#######################################
+    - name: Install Docker Compose
+      get_url:
+        url: https://github.com/docker/compose/releases/download/1.25.3/docker-compose-Linux-x86_64
+        dest: /usr/local/bin/docker-compose
