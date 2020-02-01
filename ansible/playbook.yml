@@ -120,3 +120,17 @@
         name: "{{ user_name }}"
         group: "{{ docker_group }}"
         append: yes
+#######################################
+# fusuma
+#######################################
+    - name: Install Fusuma
+      shell: gem install fusuma
+      args:
+        executable: /bin/bash
+        creates: ~/.anyenv/envs/rbenv/shims/fusuma
+    - name: 'Add "{{ user_name }}" to Input group'
+      become: yes
+      user:
+        name: "{{ user_name }}"
+        group: input
+        append: yes
