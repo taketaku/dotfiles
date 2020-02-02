@@ -57,6 +57,7 @@
           - docker-ce
           - docker-ce-cli
           - containerd.io
+          - neovim
 #######################################
 # anyenv
 #######################################
@@ -134,3 +135,30 @@
         name: "{{ user_name }}"
         group: input
         append: yes
+#######################################
+# Neovim
+# sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
+# sudo update-alternatives --config vi
+# sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
+# sudo update-alternatives --config vim
+# sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
+# sudo update-alternatives --config editor
+#######################################
+    - name: use nvim for vi
+      become: yes
+      alternatives:
+        name: vi
+        path: /usr/bin/nvim
+        priority: 60
+    - name: use nvim for vim
+      become: yes
+      alternatives:
+        name: vim
+        path: /usr/bin/nvim
+        priority: 60
+    - name: use nvim for editor
+      become: yes
+      alternatives:
+        name: editor
+        path: /usr/bin/nvim
+        priority: 60
