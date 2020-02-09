@@ -31,6 +31,8 @@
 # apt
 #######################################
     - name: apt install
+      tags:
+        - apt-install
       become: true
       apt:
         update_cache: yes
@@ -38,6 +40,7 @@
         pkg:
           - git
           - curl
+          - byobu
           - build-essential # make, gcc(GNU Compiler Collection); library package; @see https://packages.ubuntu.com/xenial/build-essential
           - libreadline-dev # GNU readline
           - zlib1g-dev # compression library package; @see https://packages.ubuntu.com/xenial/zlib1g-dev
@@ -61,6 +64,7 @@
           - fonts-powerline
           - dconf-editor
           - peco
+          - tmux
 #######################################
 # anyenv
 #######################################
