@@ -58,6 +58,9 @@
           - docker-ce-cli
           - containerd.io
           - neovim
+          - fonts-powerline
+          - dconf-editor
+          - peco
 #######################################
 # anyenv
 #######################################
@@ -162,3 +165,7 @@
         name: editor
         path: /usr/bin/nvim
         priority: 60
+#######################################
+# Font mzyy94/RictyDiminished-for-Powerline
+#######################################
+# https://github.com/LAKuEN/dotfiles/blob/master/ubuntu_setup.sh:w
