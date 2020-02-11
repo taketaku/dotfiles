@@ -1,3 +1,43 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
+    {
+        "key": "ctrl+capslock ctrl+y",
+        "command": "workbench.action.splitEditor"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "workbench.action.splitEditor"
+    },
+    {
+        "key": "ctrl+\\",
+        "command": "-workbench.action.splitEditor"
+    },
+    {
+        "key": "ctrl+x",
+        "command": "workbench.action.splitEditorDown"
+    },
+    {
+        "key": "ctrl+capslock ctrl+x",
+        "command": "workbench.action.splitEditorDown"
+    },
+    {
+        "key": "ctrl+capslock ctrl+q",
+        "command": "workbench.action.closeWindow"
+    },
+    {
+        "key": "ctrl+q",
+        "command": "workbench.action.closeWindow"
+    },
+    {
+        "key": "ctrl+shift+w",
+        "command": "-workbench.action.closeWindow"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+capslock ctrl+w",
+        "command": "workbench.action.closeActiveEditor"
+    }
 ]
