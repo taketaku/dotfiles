@@ -172,3 +172,19 @@
 # Font mzyy94/RictyDiminished-for-Powerline
 #######################################
 # https://github.com/LAKuEN/dotfiles/blob/master/ubuntu_setup.sh:w
+# not yet
+
+#######################################
+# Chrome 
+#######################################
+# not yet
+# cd ~/Downloads
+# gdebi google-chrome-stable_current_amd64.deb
+
+#######################################
+# Albert launcher @see https://github.com/albertlauncher/albert
+#######################################
+# not yet
+# https://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/amd64/albert_0.16.1_amd64.deb
+# cd ./Downloads
+# sudo gdebi albert_0.16.1_amd64.deb
