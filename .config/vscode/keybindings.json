@@ -59,7 +59,6 @@
     //     "command": "workbench.action.moveEditorToPreviousGroup",
     //     "when": "sideBarFocus"
     // },
-
     // #####################################################
     // Editor Group 間移動 
     // #####################################################
@@ -106,5 +105,10 @@
     {
         "key": "alt+k",
         "command": "workbench.action.moveEditorRightInGroup"
-    }
+    },
+    // #####################################################
+    // Resize
+    // #####################################################
+    // 最大化
+    // todo
 ]
