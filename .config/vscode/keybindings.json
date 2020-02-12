@@ -64,19 +64,47 @@
     // Editor Group 間移動 
     // #####################################################
     {
-        "key": "alt+h",
+        "key": "ctrl+h",
         "command": "workbench.action.focusLeftGroup"
     },
     {
-        "key": "alt+l",
+        "key": "ctrl+l",
         "command": "workbench.action.focusRightGroup"
     },
     {
-        "key": "alt+k",
+        "key": "ctrl+k",
         "command": "workbench.action.focusAboveGroup"
     },
     {
-        "key": "alt+j",
+        "key": "ctrl+j",
         "command": "workbench.action.focusBelowGroup"
+    },
+    // with ctrl+capslock
+    {
+        "key": "ctrl+capslock ctrl+h",
+        "command": "workbench.action.focusLeftGroup"
+    },
+    {
+        "key": "ctrl+capslock ctrl+l",
+        "command": "workbench.action.focusRightGroup"
+    },
+    {
+        "key": "ctrl+capslock ctrl+k",
+        "command": "workbench.action.focusAboveGroup"
+    },
+    {
+        "key": "ctrl+capslock ctrl+j",
+        "command": "workbench.action.focusBelowGroup"
+    },
+    // #####################################################
+    // Editor Group 内移動 
+    // #####################################################
+    {
+        "key": "alt+j",
+        "command": "workbench.action.moveEditorLeftInGroup"
+    },
+    {
+        "key": "alt+k",
+        "command": "workbench.action.moveEditorRightInGroup"
     }
 ]
