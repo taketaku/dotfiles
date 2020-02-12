@@ -1,5 +1,8 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
+    // #####################################################
+    // window 分割
+    // #####################################################
     {
         "key": "ctrl+capslock ctrl+y",
         "command": "workbench.action.splitEditor"
@@ -20,6 +23,9 @@
         "key": "ctrl+capslock ctrl+x",
         "command": "workbench.action.splitEditorDown"
     },
+    // #####################################################
+    // Close Window/Editor Group
+    // #####################################################
     {
         "key": "ctrl+capslock ctrl+q",
         "command": "workbench.action.closeWindow"
@@ -39,5 +45,38 @@
     {
         "key": "ctrl+capslock ctrl+w",
         "command": "workbench.action.closeActiveEditor"
+    },
+    // #####################################################
+    // Side Bar 間移動
+    // #####################################################
+    // {
+    //     "key": "t t",
+    //     "command": "workbench.action.focusSideBar",
+    //     "when": "editorFocus && vim.active && vim.mode != 'Insert'"
+    // },
+    // {
+    //     "key": "t t",
+    //     "command": "workbench.action.moveEditorToPreviousGroup",
+    //     "when": "sideBarFocus"
+    // },
+
+    // #####################################################
+    // Editor Group 間移動 
+    // #####################################################
+    {
+        "key": "alt+h",
+        "command": "workbench.action.focusLeftGroup"
+    },
+    {
+        "key": "alt+l",
+        "command": "workbench.action.focusRightGroup"
+    },
+    {
+        "key": "alt+k",
+        "command": "workbench.action.focusAboveGroup"
+    },
+    {
+        "key": "alt+j",
+        "command": "workbench.action.focusBelowGroup"
     }
 ]
