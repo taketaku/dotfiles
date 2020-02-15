@@ -6,5 +6,6 @@
     "go.useLanguageServer": true,
     "workbench.editor.closeEmptyGroups": false,
     "editor.minimap.enabled": false,
-    "workbench.editor.enablePreview": false
+    "workbench.editor.enablePreview": false,
+    "workbench.sideBar.location": "left"
 }
