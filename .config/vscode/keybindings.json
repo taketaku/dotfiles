@@ -100,12 +100,12 @@
     // #####################################################
     {
         "key": "alt+j",
-        "command": "workbench.action.moveEditorLeftInGroup"
+        "command": "workbench.action.previousEditorInGroup"
     },
     {
         "key": "alt+k",
-        "command": "workbench.action.moveEditorRightInGroup"
-    },
+        "command": "workbench.action.nextEditorInGroup"
+    }
     // #####################################################
     // Resize
     // #####################################################

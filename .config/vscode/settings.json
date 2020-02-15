@@ -3,5 +3,8 @@
     "go.formatTool": "goimports",
     "window.zoomLevel": 1,
     "sql-formatter.dialect": "pl/sql",
-    "go.useLanguageServer": true
+    "go.useLanguageServer": true,
+    "workbench.editor.closeEmptyGroups": false,
+    "editor.minimap.enabled": false,
+    "workbench.editor.enablePreview": false
 }
