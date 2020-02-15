@@ -107,8 +107,10 @@
         "command": "workbench.action.nextEditorInGroup"
     },
     // #####################################################
-    // Resize
+    // Zen mode
     // #####################################################
-    // 最大化
-    // todo
+    {
+        "key": "ctrl+enter",
+        "command": "workbench.action.toggleZenMode"
+    }
 ]
