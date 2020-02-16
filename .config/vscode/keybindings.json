@@ -52,12 +52,12 @@
     {
         "key": "t t",
         "command": "workbench.action.focusSideBar",
-        "when": "editorFocus && !sideBarFocus && vim.mode != 'Insert'"
+        "when": "editorFocus && vim.active && !sideBarFocus && vim.mode == 'Normal'"
     },
     {
         "key": "t t",
         "command": "workbench.action.toggleSidebarVisibility",
-        "when": "sideBarFocus"
+        "when": "sideBarFocus && !textInputFocus"
     },
     // #####################################################
     // Editor Group 間移動 
