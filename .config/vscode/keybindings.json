@@ -57,7 +57,7 @@
     {
         "key": "t t",
         "command": "workbench.action.toggleSidebarVisibility",
-        "when": "sideBarFocus && !textInputFocus"
+        "when": "sideBarFocus && !inputFocus"
     },
     // #####################################################
     // Editor Group 間移動 

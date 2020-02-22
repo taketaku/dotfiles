@@ -1,3 +1,3 @@
 function chown_for_docker
-    chown -R tt .
+    sudo chown -R tt .
 end
