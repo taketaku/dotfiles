@@ -188,3 +188,10 @@
 # https://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/amd64/albert_0.16.1_amd64.deb
 # cd ./Downloads
 # sudo gdebi albert_0.16.1_amd64.deb
+
+#######################################
+# Slack for ubuntu-18-04 @see https://linuxize.com/post/how-to-install-slack-on-ubuntu-18-04/
+#######################################
+# not yet
+# wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.0.2-amd64.deb
+# sudo apt install ./slack-desktop-*.deb
