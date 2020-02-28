@@ -64,6 +64,19 @@
           - fonts-powerline
           - dconf-editor
           - peco
+          - wine-stable
+          - firefox
+          # ↓ k8s, minikube {
+          # sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
+          - qemu-kvm
+          - libvirt-bin
+          - ubuntu-vm-builder
+          - virt-top
+          - libguestfs-tools
+          - virtinst
+          - bridge-utils
+          - virt-manager
+          # }
 #######################################
 # anyenv
 #######################################
@@ -193,5 +206,47 @@
 # Slack for ubuntu-18-04 @see https://linuxize.com/post/how-to-install-slack-on-ubuntu-18-04/
 #######################################
 # not yet
+# cd ~/Downloads
 # wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.0.2-amd64.deb
 # sudo apt install ./slack-desktop-*.deb
+
+#######################################
+# use KVM @see https://computingforgeeks.com/install-kvm-centos-rhel-ubuntu-debian-sles-arch/
+# @see https://help.ubuntu.com/community/KVM/Installation
+#######################################
+# sudo modprobe vhost_net
+# sudo lsmod | grep vhost
+# echo "vhost_net" | sudo tee -a /etc/modules
+
+#######################################
+# Download minikube @see https://computingforgeeks.com/how-to-install-minikube-on-ubuntu-18-04/
+#######################################
+# wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+# chmod +x minikube-linux-amd64
+# sudo mv minikube-linux-amd64 /usr/local/bin/minikube
+
+#######################################
+# Install kubectl @see https://kubernetes.io/docs/tasks/tools/install-kubectl/
+#######################################
+# curl -LO https://storage.googleapis.com/kubernetes-release/release/(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+# chmod +x ./kubectl
+# kubectl version -o json 
+
+# curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+# echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+# sudo apt-get install -y kubectl
+
+
+#######################################
+# Install Docker Machine KVM driver @see https://computingforgeeks.com/how-to-run-minikube-on-kvm/
+#######################################
+# curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-kvm2
+# chmod +x docker-machine-driver-kvm2
+# sudo mv docker-machine-driver-kvm2 /usr/local/bin/
+# virt-host-validate
+# @see: https://blog.chirathr.com/android/ubuntu/2018/08/13/fix-avd-error-ubuntu-18-04/
+## minikube start then occured this
+## error: failed to connect to the hypervisor
+## error: Failed to connect socket to '/var/run/libvirt/libvirt-sock': Permission denied
+# sudo adduser <username> kvm
+# sudo chown <username> /dev/kvm
