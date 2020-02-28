@@ -10,3 +10,5 @@ bind p fish_clipboard_paste
 
 # alias
 alias fig='docker-compose'
+alias kc='kubectl'
+alias mk='minikube'
