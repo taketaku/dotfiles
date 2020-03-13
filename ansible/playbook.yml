@@ -254,13 +254,6 @@
 # https://www.reddit.com/r/linuxquestions/comments/bgbpim/how_to_enable_iommu_on_ubuntu_1804
 
 #######################################
-# Install Kompose
-#######################################
-# curl -L https://github.com/kubernetes/kompose/releases/download/v1.21.0/kompose-linux-amd64 -o kompose
-# chmod +x kompose
-# sudo mv ./kompose /usr/local/bin/komposeV
-
-#######################################
 # Install Helm @see https://helm.sh/docs/intro/install/
 #######################################
 # curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
