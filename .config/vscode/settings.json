@@ -19,10 +19,17 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[go]": {
+    "editor.tabSize": 4
+  },
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "vetur.useWorkspaceDependencies": true
-  // "vim.autoSwitchInputMethod.enable": true,
-  // "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/bin/fcitx-remote",
-  // "vim.autoSwitchInputMethod.switchIMCmd": "/usr/bin/fcitx-remote {im}",
-  // "vim.autoSwitchInputMethod.defaultIM": "-c"
+  "vetur.useWorkspaceDependencies": true,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/.nuxt/**": true,
+    "**/.dist/**": true,
+    "**/node_modules/*/**": true
+  },
+  "editor.tabSize": 2
 }
