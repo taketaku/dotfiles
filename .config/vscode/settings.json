@@ -31,5 +31,19 @@
     "**/.dist/**": true,
     "**/node_modules/*/**": true
   },
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "terraform.indexing": {
+    "enabled": false,
+    "liveIndexing": false,
+    "delay": 500,
+    "exclude": [
+      ".terraform/**/*",
+      "**/.terraform/**/*"
+    ]
+  },
+  "terraform.languageServer": {
+    "enabled": true,
+    "args": []
+  },
+  "editor.formatOnSave": true
 }
